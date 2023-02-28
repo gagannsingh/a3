@@ -22,7 +22,7 @@ The month with the most eBook checkouts was 1, or January.
 The month with the least eBook checkouts was 2, or February.
 
 - How has the number of print book checkouts changed over time? (one of the material types analyzed in this analysis)
-Here is a chart that better pictures this for us:
+Here is a chart that better pictures this data:
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("summary.R")}
 ``````
