@@ -1,0 +1,79 @@
+---
+title: "A3: SPL Library Checkouts"
+output: html_document
+---
+
+### Introduction
+
+Welcome to this analysis of the 2022-2023 Seattle Public Library data set. In this study, we will delve into the key trends that emerged in 2022 concerning Material Type and Usage Class. The Seattle Public Library is a valuable resource for the community, providing access to a diverse range of materials, including books, DVDs, audio books, and other media. Through this analysis, we aim to shed light on how patrons interact with the library's collection and how different types of materials are utilized. By examining these trends, we can gain insights into the library and patron's behavior, preferences, and needs, which can inform decisions about resource allocation, collection development, and library services.. So, let's dive in and explore the rich data that the Seattle Public Library has provided us with!
+
+### Summary of 2022
+
+- What is the month with the most checkouts for the book "The Years" by Annie Ernaux?
+The month with the most checkouts was 10, or October.
+
+- What is the month with the least checkouts for the book "The Years" by Annie Ernaux?
+The month with the least checkouts was 8, or August.
+
+- What is the month with the most checkouts for eBooks?
+The month with the most eBook checkouts was 1, or January.
+
+- What is the month with the least checkouts for eBooks?
+The month with the least eBook checkouts was 2, or February.
+
+- How has the number of print book checkouts changed over time? (one of the material types analyzed in this analysis)
+Here is a chart that better pictures this for us:
+
+``````{r, echo = FALSE, warning = FALSE, code = readLines("summary.R")}
+``````
+
+### The Dataset
+
+- Who collected/published the data?  
+  The Seattle Public Library collected and published the data to the City of Seattle website.
+  
+- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+  The parameters are UsageClass, CheckoutType, MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Title, ISBN, Creator, Subjects, Publisher, PublicationYear.
+  
+- How was the data collected or generated?  
+  The data set we are specifically analyzing was collected by the Seattle Public Library systems through 2022-2023. They collected the data while keeping the patrons anonymous. They got data from before 2017 from an art peace that a professor/artist was working on.
+  
+- Why was the data collected? 
+  The data was collected starting 2017 as an initiative started by Barack Obama, though Seattle Public Librarys had data going back to 2005 due to the professor mentioned earlier.
+
+- What, if any, ethical questions do you need to consider when working with this data?
+  Usually, we can talk about data privacy, informed consent, bias and discrimination, transparency, or data retention here, though in this case, there is no personally identifiable information present and a lot of the ethical questions do not need to be addressed. 
+
+- What are possible limitations or problems with this data?   (at least 200 words)
+The limitations and problems with the data set are quite significant and need to be carefully considered when drawing any conclusions from it. Sampling bias is one of the major limitations of the data set as it only represents a specific demographic and region with access to the library. It only targets the demographics and regions with the library, and the trends that will be shown through this analysis will only be as relevant as the patrons who checkout these books. This limitation can result in important information being left out, leading to inaccurate conclusions.
+The lack of context associated with the data is another issue to be aware of. The data set only includes checkout information, which makes it difficult to fully understand the individuals or groups associated with the data. This is to protect patron data/privacy, though this limitation may result in inaccuracies in the conclusions drawn from the data.
+Incomplete or inaccurate data is also a problem with the data set. The data was collected by an artist/professor before 2017, which means human error is possible. The large size of the data set may make it difficult to identify and analyze inconsistencies or errors within the data.
+The way publication year data is collected is another limitation, making it difficult to analyze the data accurately. Additionally, this specific data set only represents one year's worth of data, limiting the scope of analysis to just 12 months or 4 seasons. Separating the month and year in the data can also make it more challenging to draw conclusions about trends over time.
+Finally, the variable and ambiguous ISBN data can be challenging to work with, as there may be multiple ISBNs associated with a single book. Without context, it can be difficult to determine which ISBN corresponds to which edition or printing.
+Overall, the data set's limitations and problems need to be carefully considered when interpreting the data to ensure accurate conclusions are drawn.
+  
+
+### First Trends Over Time Chart
+
+This is a line chart showing the monthly checkout trends for different Material Types. I was interested in seeing how the trends of checkouts varied throughout the months and the difference between them in material type. I chose audio books, books, and e-books for this chart. The data shows a drop off of book checkouts towards the end of the year and an increase of eBook checkouts. With the limited time frame, it seems like eBooks have started leading the preferred material type within the community.
+
+
+``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+``````
+
+### Second Trends Over Time Chart
+
+Diving deeper in to the previous question, I wanted an overall picture of the checkout trends. With the increase of eBook checkouts shown in the previous graph, I wanted to see if this meant an increased adoption of technology within the community. This chart shows that the digital usage class has been leading within the data provided, and physical dropped off towards the end of the year while digital picked up in popularity.
+
+
+``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```
+
+### Third Chart
+
+Motivated by the previous charts, I wanted to see the distribution between the top 5 material types (this helped escape the noise of numerous material types in the data set). This chart shows the total checkouts per month but also shows the comparative distributions of those checkouts within the 5 top material types. You can see that overall checkouts dropped off sharply after the first month, and eBook and Book checkouts lead the data while Audio books closely followed throughout the year. Although, sound disc and videodiscs were less popular throughout. 
+
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("CustomChart.R")}
+```
+
+
